@@ -1476,6 +1476,7 @@ export async function render({
             (file) =>
               `./${assets.courseElementExtensionAssetPath(course.commit_hash, locals.urlPrefix, file)}`,
           ),
+          'elements/': `${assets.courseElementAssetPath(course.commit_hash, locals.urlPrefix, '')}`,
         },
       };
 

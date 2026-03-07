@@ -1,4 +1,4 @@
-import { initSymbolicKeyboard, isSelected } from './pl-symbolic-input-util.js';
+import { initSymbolicKeyboard } from './pl-symbolic-input-util.js';
 
 (() => {
   initSymbolicKeyboard();
