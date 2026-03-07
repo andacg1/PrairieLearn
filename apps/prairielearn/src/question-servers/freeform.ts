@@ -1466,11 +1466,15 @@ export async function render({
           ...mapValues(dynamicDependencies.coreElementScripts, (file) =>
             assets.coreElementAssetPath(file),
           ),
-          ...mapValues(dynamicDependencies.courseElementScripts, (file) =>
-            assets.courseElementAssetPath(course.commit_hash, courseElementUrlPrefix, file),
+          ...mapValues(
+            dynamicDependencies.courseElementScripts,
+            (file) =>
+              `./${assets.courseElementAssetPath(course.commit_hash, courseElementUrlPrefix, file)}`,
           ),
-          ...mapValues(dynamicDependencies.extensionScripts, (file) =>
-            assets.courseElementExtensionAssetPath(course.commit_hash, locals.urlPrefix, file),
+          ...mapValues(
+            dynamicDependencies.extensionScripts,
+            (file) =>
+              `./${assets.courseElementExtensionAssetPath(course.commit_hash, locals.urlPrefix, file)}`,
           ),
         },
       };
@@ -1498,7 +1502,7 @@ export async function render({
           : '',
         // It's important that any library-style scripts come first
         ...coreScriptUrls.map((url) => `<script type="text/javascript" src="${url}"></script>`),
-        ...scriptUrls.map((url) => `<script type="text/javascript" src="${url}"></script>`),
+        ...scriptUrls.map((url) => `<script type="module" src="${url}"></script>`),
       ];
       htmls.extraHeadersHtml = headerHtmls.join('\n');
 
