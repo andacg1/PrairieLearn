@@ -754,6 +754,16 @@ export async function initExpress(): Promise<Express> {
     (await import('./pages/elementExtensionFiles/elementExtensionFiles.js')).default,
   );
 
+  // Serve shared ES module files for elements.
+  app.use(
+    '/pl/static/cacheableElementModules/:cachebuster',
+    (await import('./pages/elementModules/elementModules.js')).default(),
+  );
+  app.use(
+    '/pl/static/elementModules',
+    (await import('./pages/elementModules/elementModules.js')).default(),
+  );
+
   // For backwards compatibility, we continue to serve the non-cached element
   // files.
   // TODO: if we can determine that these routes are no longer receiving

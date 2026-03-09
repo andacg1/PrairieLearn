@@ -2,15 +2,11 @@
   "controller": "pl-big-o-input.py",
   "dependencies": {
     "nodeModulesScripts": ["mathlive/mathlive.min.js"],
-    "elementScripts": [
-      "../pl-symbolic-input/pl-symbolic-input-util.js",
-      "../pl-symbolic-input/pl-symbolic-input.js"
-    ],
+    "elementScripts": ["../pl-symbolic-input/pl-symbolic-input.js"],
     "elementStyles": ["pl-big-o-input.css"]
   },
   "dynamicDependencies": {
     "elementScripts": {
-      "pl-symbolic-input-util.js": "../pl-symbolic-input/pl-symbolic-input-util.js",
       "pl-symbolic-input.js": "../pl-symbolic-input/pl-symbolic-input.js"
     }
   }

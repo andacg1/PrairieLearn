@@ -1,5 +1,5 @@
-import { initSymbolicKeyboard } from '/apps/prairielearn/elements/pl-symbolic-input/pl-symbolic-input-util.js';
-import { testModule } from '/apps/prairielearn/elements/pl-symbolic-input/test-module.js';
+import { initSymbolicKeyboard } from '/pl/static/elementModules/pl-symbolic-input-util.js';
+import { testModule } from '/pl/static/elementModules/testModule.js';
 
 (() => {
   testModule();
